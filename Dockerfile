@@ -1,18 +1,15 @@
-# Usa una imagen ligera con nginx
+# Usa la imagen oficial de NGINX
 FROM nginx:alpine
 
-# Borra los archivos por defecto del servidor
-RUN rm -rf /usr/share/nginx/html/*
+# Copia el contenido HTML, CSS, multimedia y JS al directorio de NGINX
+COPY ./HTML /usr/share/nginx/html/HTML
+COPY ./CSS /usr/share/nginx/html/CSS
+COPY ./Multimedia /usr/share/nginx/html/Multimedia
+COPY ./script.js /usr/share/nginx/html/script.js
 
-# Copia todos los archivos del proyecto al contenedor
-COPY . /usr/share/nginx/html
+# Copia el index.html a la raíz del servidor (para que se sirva en "/")
+RUN rm /usr/share/nginx/html/index.html
+COPY ./HTML/index.html /usr/share/nginx/html/index.html
 
-# Mueve los archivos HTML a la raíz del servidor
-RUN mv /usr/share/nginx/html/HTML/* /usr/share/nginx/html/ \
-    && rm -rf /usr/share/nginx/html/HTML
-
-# Expone el puerto 80 (para Render o localhost)
+# Expone el puerto 80 (por defecto en NGINX)
 EXPOSE 80
-
-# Comando para iniciar Nginx en modo foreground
-CMD ["nginx", "-g", "daemon off;"]
