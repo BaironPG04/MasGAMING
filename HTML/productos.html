@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>+Gaming</title>
+
+  <!-- Font Awesome (jsDelivr CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+  />
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="/CSS/productos.css" />
+</head>
+<body>
+  <header class="header-fullwidth">
+    <div class="menu-container">
+      <a href="/HTML/index.html" class="logo">
+        <img src="/Multimedia/logo-removebg-preview.png" alt=alt="+GAMING Logo" style="height: 40px;">
+        <span class="logo-text">+GAMING</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="/HTML/productos.html" class="nav-item">Productos</a>
+        <a href="/HTML/oferta.html" class="nav-item">Oferta</a>
+        <a href="/HTML/contacto.html" class="nav-item">Contacto</a>
+  
+        <!-- Entrar con texto + icono -->
+        <a href="/HTML/login.html" class="nav-item">
+          <i class="fa-regular fa-user"></i>
+          Entrar
+        </a>
+  
+        <!-- Icono de carrito -->
+        <a href="/HTML/carrito.html" class="nav-item">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </nav>
+    </div>
+  </header>
+      <main class="productos-container">
+        <h1 class="titulo-principal">COMPRAR TODO</h1>
+        <div class="productos-wrapper">
+          <aside class="filtro">
+            <h2>Filtrar por</h2>
+            <div class="filtro-categoria">
+              <h3>Categoría</h3>
+              <ul>
+                <li><a href="#">Todos</a></li>
+                <li><a href="#">Consolas</a></li>
+                <li><a href="#">Juegos</a></li>
+                <li><a href="#">Controles</a></li>
+                <li><a href="#">Accesorios</a></li>
+                <li><a href="#">Oferta</a></li>
+                <li><a href="#">Más vendidos</a></li>
+              </ul>
+            </div>
+            <div class="filtro-precio">
+              <h3>Precio</h3>
+              <!-- Puedes incluir sliders o inputs aquí -->
+            </div>
+          </aside>
+      
+         <section class="galeria-productos">
+  <div class="producto-card">
+    <span class="etiqueta oferta">OFERTA</span>
+    <img src="/Multimedia/series X.jpg" alt="Xbox Series X" />
+    <h3>Xbox Series X</h3>
+    <p class="precio">$2.199.000</p>
+    <button class="btn-agregar" data-id="1" data-nombre="Xbox Series X" data-precio="2199000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta nuevo">Nuevo</span>
+    <img src="/Multimedia/Series S.jpeg" alt="Xbox Series S" />
+    <h3>Xbox Series S</h3>
+    <p class="precio">$1.199.000</p>
+    <button class="btn-agregar" data-id="2" data-nombre="Xbox Series S" data-precio="1199000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta oferta">OFERTA</span>
+    <img src="/Multimedia/Audifonos.jpg" alt="Auriculares L5" />
+    <h3>Auriculares L5</h3>
+    <p class="precio">$159.000</p>
+    <button class="btn-agregar" data-id="3" data-nombre="Auriculares L5" data-precio="159000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta nuevo">Nuevo</span>
+    <img src="/Multimedia/sillaGamer.jpg" alt="Silla GAMER" />
+    <h3>Silla gamer hergonomica</h3>
+    <p class="precio">$990.000</p>
+    <button class="btn-agregar" data-id="4" data-nombre="Silla gamer hergonomica" data-precio="990000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta nuevo">Nuevo</span>
+    <img src="/Multimedia/Mando-Multiplataforma.jpg" alt="Mando-Multiplataforma" />
+    <h3>Mando multiplataforma inalambrico</h3>
+    <p class="precio">$250.000</p>
+    <button class="btn-agregar" data-id="5" data-nombre="Mando multiplataforma inalambrico" data-precio="250000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta oferta">Oferta</span>
+    <img src="/Multimedia/Combo-GAMEr.jpg" alt="Combo-GAMER" />
+    <h3>Combo Gamer Teclado y Mouse</h3>
+    <p class="precio">$250.000</p>
+    <button class="btn-agregar" data-id="6" data-nombre="Combo Gamer Teclado y Mouse" data-precio="250000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta nuevo">Nuevo</span>
+    <img src="/Multimedia/Mouse-Inalambrico.png" alt="Mouse Inalambrico" />
+    <h3>Mouse gamer Inalambrico</h3>
+    <p class="precio">$175.000</p>
+    <button class="btn-agregar" data-id="7" data-nombre="Mouse gamer Inalambrico" data-precio="175000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta oferta">Oferta</span>
+    <img src="/Multimedia/Teclado-mecanico.png" alt="Teclado mecanico" />
+    <h3>Teclado mecanico TKL Switches brown</h3>
+    <p class="precio">$195.000</p>
+    <button class="btn-agregar" data-id="8" data-nombre="Teclado mecanico TKL" data-precio="195000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta oferta">Oferta</span>
+    <img src="/Multimedia/PS5.jpg" alt="Play Station 5" />
+    <h3>PS5 Slim 1TB</h3>
+    <p class="precio">$1.950.000</p>
+    <button class="btn-agregar" data-id="9" data-nombre="PS5 Slim 1TB" data-precio="1950000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta oferta">Oferta</span>
+    <img src="/Multimedia/GOW-JUEGO.png" alt="God of War juego fisico" />
+    <h3>God of War Juego fisico</h3>
+    <p class="precio">$210.000</p>
+    <button class="btn-agregar" data-id="10" data-nombre="God of War Juego fisico" data-precio="210000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta nuevo">Nuevo</span>
+    <img src="/Multimedia/Crash-JUEGO.jpg" alt="Crash Bandicoot Juego fisico" />
+    <h3>Crash Bandicoot Juego fisico</h3>
+    <p class="precio">$250.000</p>
+    <button class="btn-agregar" data-id="11" data-nombre="Crash Bandicoot Juego fisico" data-precio="250000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta oferta">Oferta</span>
+    <img src="/Multimedia/Spiderman-JUego.jpeg" alt="Spiderman juego fisico" />
+    <h3>Spiderman Miles Morales Juego fisico</h3>
+    <p class="precio">$210.000</p>
+    <button class="btn-agregar" data-id="12" data-nombre="Spiderman Miles Morales Juego fisico" data-precio="210000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta nuevo">Nuevo</span>
+    <img src="/Multimedia/Forza-JUEGO.jpeg" alt="Forza Juego fisico" />
+    <h3>Forza Horizon 5 Juego fisico</h3>
+    <p class="precio">$250.000</p>
+    <button class="btn-agregar" data-id="13" data-nombre="Forza Horizon 5 Juego fisico" data-precio="250000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta oferta">Oferta</span>
+    <img src="/Multimedia/MANDO-PS5.jpg" alt="Mando PS5" />
+    <h3>Mando consola PS5</h3>
+    <p class="precio">$299.000</p>
+    <button class="btn-agregar" data-id="14" data-nombre="Mando consola PS5" data-precio="299000">Agregar</button>
+  </div>
+
+  <div class="producto-card">
+    <span class="etiqueta oferta">Oferta</span>
+    <img src="/Multimedia/Mando-XBOX.jpeg" alt="Mando Xbox" />
+    <h3>Mando consola Xbox Series</h3>
+    <p class="precio">$299.000</p>
+    <button class="btn-agregar" data-id="15" data-nombre="Mando consola Xbox Series" data-precio="299000">Agregar</button>
+  </div>
+</section>
+
+        </div>
+      </main>
+      
+
+  
+  
+
+      <footer class="footer">
+        <div class="footer-contenido">
+          <div class="footer-logo">
+            <img src="/Multimedia/logo-removebg-preview.png" alt="Logo +GAMING" />
+            <h2>+GAMING</h2>
+          </div>
+      
+          <div class="footer-col">
+            <h3>Productos</h3>
+            <ul>
+              <li><a href="#">Juegos</a></li>
+              <li><a href="#">Consolas</a></li>
+              <li><a href="#">Controles</a></li>
+              <li><a href="#">Accesorios</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-col">
+            <h3>Tienda</h3>
+            <ul>
+              <li>Carrera 9be #33-17 La Cumbre</li>
+              <li>Lun - Vie: 9:00am - 6:00pm</li>
+              <li>baironandresp@gmail.com</li>
+              <li>+57-3203772960</li>
+            </ul>
+          </div>
+      
+          <div class="footer-col">
+            <h3>Política</h3>
+            <ul>
+              <li><a href="#">Términos y condiciones</a></li>
+              <li><a href="#">Política de envío</a></li>
+              <li><a href="#">Política de reembolso</a></li>
+              <li><a href="#">Política de privacidad</a></li>
+              <li><a href="#">Política de cookies</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <div class="metodos-pago">
+            <h4>Métodos de pago</h4>
+            <img src="/Multimedia/pagos.png" alt="Métodos de pago" />
+          </div>
+      
+          <div class="footer-social">
+            <h4>Únete a la comunidad</h4>
+            <div class="redes">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+      
+        <div class="footer-copy">
+          <p>© 2025 Creado por   <a href="/HTML/index.html" target="_blank">+GAMING</a></p>
+        </div>
+      </footer>
+
+
+      
+      <script src="/script.js"></script>
+
+
+</body>
+</html>

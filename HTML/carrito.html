@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>+Gaming</title>
+
+  <!-- Font Awesome (jsDelivr CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+  />
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="/CSS/carrito.css" />
+</head>
+<body>
+  <header class="header-fullwidth">
+    <div class="menu-container">
+      <a href="/HTML/index.html" class="logo">
+        <img src="/Multimedia/logo-removebg-preview.png" alt=alt="+GAMING Logo" style="height: 40px;">
+        <span class="logo-text">+GAMING</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="/HTML/productos.html" class="nav-item">Productos</a>
+        <a href="/HTML/oferta.html" class="nav-item">Oferta</a>
+        <a href="/HTML/contacto.html" class="nav-item">Contacto</a>
+  
+        <!-- Entrar con texto + icono -->
+        <a href="/HTML/login.html" class="nav-item">
+          <i class="fa-regular fa-user"></i>
+          Entrar
+        </a>
+  
+        <!-- Icono de carrito -->
+        <a href="/HTML/carrito.html" class="nav-item">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+
+
+<div class="carrito-container">
+  <h2 class="carrito-titulo">🛒 Tu Carrito Gamer</h2>
+  <div id="contenedor-carrito"></div>
+  
+  <div class="acciones-carrito">
+    <a href="/HTML/productos.html" class="btn-seguir-comprando">
+      <i class="fas fa-chevron-left"></i> Seguir Comprando
+    </a>
+    <button class="btn-pagar">
+      <i class="fas fa-bolt"></i> Pagar Ahora
+    </button>
+  </div>
+</div>
+
+<!-- Modal de pago exitoso -->
+<div id="modal-pago" class="modal-pago">
+  <div class="modal-contenido">
+    <span class="cerrar-modal">&times;</span>
+    <div class="modal-icono">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h3>¡Pago realizado con éxito!</h3>
+    <p>Tu pedido ha sido procesado correctamente.</p>
+    <button id="btn-cerrar-modal" class="btn-modal">Aceptar</button>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const contenedor = document.getElementById("contenedor-carrito");
+
+    if (carrito.length === 0) {
+      contenedor.innerHTML = "<p>El carrito está vacío.</p>";
+      return;
+    }
+
+    let total = 0;
+    contenedor.innerHTML = ""; // Limpiar antes de agregar
+
+    carrito.forEach((producto, index) => {
+      const div = document.createElement("div");
+      div.classList.add("producto-carrito");
+      div.innerHTML = `
+        <div class="producto-info">
+          <h3>${producto.nombre}</h3>
+          <p>Precio: $${producto.precio.toLocaleString()}</p>
+          <p>Cantidad: ${producto.cantidad}</p>
+        </div>
+        <div class="producto-precio-total">
+          <p>Total: $${(producto.precio * producto.cantidad).toLocaleString()}</p>
+          <button class="eliminar-producto" data-index="${index}">Eliminar </button>
+        </div>
+        <hr>
+      `;
+      contenedor.appendChild(div);
+
+      total += producto.precio * producto.cantidad;
+    });
+
+    const totalDiv = document.createElement("div");
+    totalDiv.innerHTML = `<h3>Total: $${total.toLocaleString()}</h3>`;
+    contenedor.appendChild(totalDiv);
+
+    // Evento de eliminación (ahora reduce la cantidad en 1)
+    document.querySelectorAll(".eliminar-producto").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const index = e.target.getAttribute("data-index");
+        const producto = carrito[index];
+        
+        if (producto.cantidad > 1) {
+          producto.cantidad--; // Reduce la cantidad en 1
+        } else {
+          carrito.splice(index, 1); // Elimina el producto si la cantidad era 1
+        }
+        
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        location.reload(); // Recarga para actualizar la vista
+      });
+    });
+  });
+
+  // Función para mostrar el modal de pago
+function mostrarModalPago() {
+  const modal = document.getElementById('modal-pago');
+  modal.style.display = 'block';
+  
+  // Limpiar carrito después de pagar
+  localStorage.removeItem('carrito');
+  
+  // Cerrar modal al hacer clic en la X o el botón
+  document.querySelector('.cerrar-modal').onclick = function() {
+    modal.style.display = 'none';
+    location.reload();
+  }
+  
+  document.getElementById('btn-cerrar-modal').onclick = function() {
+    modal.style.display = 'none';
+    location.reload();
+  }
+  
+  // Cerrar al hacer clic fuera del modal
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+      location.reload();
+    }
+  }
+}
+
+// Asignar evento al botón Pagar
+document.querySelector('.btn-pagar')?.addEventListener('click', function(e) {
+  e.preventDefault();
+  mostrarModalPago();
+});
+</script>
+
+
+
+
+
+      
+
+  
+  
+
+  <footer class="footer">
+    <div class="footer-contenido">
+      <div class="footer-logo">
+        <img src="/Multimedia/logo-removebg-preview.png" alt="Logo +GAMING" />
+        <h2>+GAMING</h2>
+      </div>
+  
+      <div class="footer-col">
+        <h3>Productos</h3>
+        <ul>
+          <li><a href="#">Juegos</a></li>
+          <li><a href="#">Consolas</a></li>
+          <li><a href="#">Controles</a></li>
+          <li><a href="#">Accesorios</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h3>Tienda</h3>
+        <ul>
+          <li>Carrera 9be #33-17 La Cumbre</li>
+          <li>Lun - Vie: 9:00am - 6:00pm</li>
+          <li>baironandresp@gmail.com</li>
+          <li>+57-3203772960</li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h3>Política</h3>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de envío</a></li>
+          <li><a href="#">Política de reembolso</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="metodos-pago">
+        <h4>Métodos de pago</h4>
+        <img src="/Multimedia/pagos.png" alt="Métodos de pago" />
+      </div>
+  
+      <div class="footer-social">
+        <h4>Únete a la comunidad</h4>
+        <div class="redes">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-copy">
+      <p>© 2025 Creado por   <a href="/HTML/index.html" target="_blank">+GAMING</a></p>
+    </div>
+  </footer>
+
+<script src="/script.js"></script>
+
+
+</body>
+</html>

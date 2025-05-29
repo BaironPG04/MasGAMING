@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>+Gaming</title>
+
+  <!-- Font Awesome (jsDelivr CDN) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+  />
+
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="/CSS/login.css" />
+</head>
+<body>
+  <header class="header-fullwidth">
+    <div class="menu-container">
+      <a href="/HTML/index.html" class="logo">
+        <img src="/Multimedia/logo-removebg-preview.png" alt=alt="+GAMING Logo" style="height: 40px;">
+        <span class="logo-text">+GAMING</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="/HTML/productos.html" class="nav-item">Productos</a>
+        <a href="/HTML/oferta.html" class="nav-item">Oferta</a>
+        <a href="/HTML/contacto.html" class="nav-item">Contacto</a>
+  
+        <!-- Entrar con texto + icono -->
+        <a href="/HTML/login.html" class="nav-item">
+          <i class="fa-regular fa-user"></i>
+          Entrar
+        </a>
+  
+        <!-- Icono de carrito -->
+        <a href="/HTML/carrito.html" class="nav-item">
+          <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+      </nav>
+    </div>
+  </header>
+      
+  <main class="login-container">
+    <div class="login-box">
+      <h2>Iniciar Sesión</h2>
+      <form action="#" method="POST" class="login-form">
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="Ingresa tu correo" value="usuario@gmail.com" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Contraseña</label>
+          <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" value="usuario123" required />
+        </div>
+  
+        <button type="button" class="btn-login" onclick="window.location.href='index.html'">Entrar</button>
+        <p class="registro">¿No tienes cuenta? <a href="#">Regístrate</a></p>
+      </form>
+    </div>
+  </main>
+  
+  
+  
+
+  <footer class="footer">
+    <div class="footer-contenido">
+      <div class="footer-logo">
+        <img src="/Multimedia/logo-removebg-preview.png" alt="Logo +GAMING" />
+        <h2>+GAMING</h2>
+      </div>
+  
+      <div class="footer-col">
+        <h3>Productos</h3>
+        <ul>
+          <li><a href="#">Juegos</a></li>
+          <li><a href="#">Consolas</a></li>
+          <li><a href="#">Controles</a></li>
+          <li><a href="#">Accesorios</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h3>Tienda</h3>
+        <ul>
+          <li>Carrera 9be #33-17 La Cumbre</li>
+          <li>Lun - Vie: 9:00am - 6:00pm</li>
+          <li>baironandresp@gmail.com</li>
+          <li>+57-3203772960</li>
+        </ul>
+      </div>
+  
+      <div class="footer-col">
+        <h3>Política</h3>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Política de envío</a></li>
+          <li><a href="#">Política de reembolso</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <div class="metodos-pago">
+        <h4>Métodos de pago</h4>
+        <img src="/Multimedia/pagos.png" alt="Métodos de pago" />
+      </div>
+  
+      <div class="footer-social">
+        <h4>Únete a la comunidad</h4>
+        <div class="redes">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-copy">
+      <p>© 2025 Creado por   <a href="/HTML/index.html" target="_blank">+GAMING</a></p>
+    </div>
+  </footer>
+</body>
+</html>
